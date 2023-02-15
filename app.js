@@ -36,3 +36,29 @@ const movies = {
     text: "The dead speak! The galaxy has heard a mysterious broadcast, a threat of REVENGE in the sinister voice of the late EMPEROR PALPATINE. GENERAL LEIA ORGANA dispatches secret agents to gather intelligence, while REY, the last hope of the Jedi, trains for battle against the diabolical FIRST ORDER. Meanwhile, Supreme Leader KYLO REN rages in search of the phantom Emperor, determined to destroy any threat to his power....",
   },
 };
+const $title = document.createElement("h1"),
+  $text = document.createElement("p");
+const $audio = document.getElementById("audio");
+
+function mostrarPeliculaAleatoria() {
+  // Obtiene un número aleatorio entre 1 y la longitud de movies
+  const numAleatorio =
+    Math.floor(Math.random() * Object.keys(movies).length) + 1;
+
+  // Obtiene la película correspondiente al número aleatorio
+  const pelicula = movies["ep" + numAleatorio];
+
+  // Agrega el título y el texto de la película al DOM
+  $title.textContent = pelicula.title;
+  $text.textContent = pelicula.text;
+
+  const $main = document.querySelector("main");
+  $main.innerHTML = "";
+  $main.appendChild($title);
+  $main.appendChild($text);
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  mostrarPeliculaAleatoria();
+  $audio.play();
+});
