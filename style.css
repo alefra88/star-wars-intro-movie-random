@@ -23,7 +23,7 @@ body {
   height: 100vh;
   overflow: hidden;
   color: #ffb13a;
-  background-image: url("../assets/stars.gif");
+  background-image: url("./assets/stars.gif");
 }
 
 .star-wars-container {
